@@ -1,4 +1,4 @@
-package br.com.studies.testes
+package br.com.studies.arrays.testes
 
 fun testeIdades() {
     //    val idades = IntArray(4)

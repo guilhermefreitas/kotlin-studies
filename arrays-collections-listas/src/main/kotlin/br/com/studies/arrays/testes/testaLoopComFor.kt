@@ -1,4 +1,4 @@
-package br.com.studies.testes
+package br.com.studies.arrays.testes
 
 fun testeForComAtribuicao() {
     val salarios = doubleArrayOf(1400.50, 2000.00, 3000.00, 4000.00, 5000.00)

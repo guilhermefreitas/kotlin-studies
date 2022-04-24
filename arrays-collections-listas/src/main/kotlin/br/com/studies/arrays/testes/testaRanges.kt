@@ -1,4 +1,4 @@
-package br.com.studies.testes
+package br.com.studies.arrays.testes
 
 fun testeRange() {
     val serie: IntRange = 1.rangeTo(10)
