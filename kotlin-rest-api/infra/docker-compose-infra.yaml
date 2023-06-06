@@ -13,3 +13,19 @@ services:
     environment:
       USER: admin
       PASSWORD: Pa55w0rd
+
+  mysql:
+    image: mysql:8.0.33
+    container_name: mysql
+    command: --innodb_use_native_aio=0
+    environment:
+     - MYSQL_ROOT_PASSWORD=
+     - MYSQL_DATABASE=kotlin-rest-api
+     - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+     - '3306:3306'
+    volumes:
+     - db:/var/lib/mysql
+
+volumes:
+  db:
