@@ -1,5 +1,6 @@
 package br.com.restkotlinapi.domain
 
+import br.com.restkotlinapi.dto.v1.PersonDto
 import jakarta.persistence.*
 
 @Entity
@@ -22,4 +23,13 @@ data class Person (
     @Column( nullable = false, length = 20)
     var gender: String = ""
 
+)
+
+
+fun PersonDto.toEntity() = Person(
+    id = this.id,
+    firstName = this.firstName,
+    lastName = this.lastName,
+    address = this.address,
+    gender = this.gender
 )

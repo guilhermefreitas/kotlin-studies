@@ -17,7 +17,6 @@ services:
   mysql:
     image: mysql:8.0.33
     container_name: mysql
-    command: --innodb_use_native_aio=0
     environment:
      - MYSQL_ROOT_PASSWORD=
      - MYSQL_DATABASE=kotlin-rest-api

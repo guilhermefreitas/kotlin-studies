@@ -1,6 +1,6 @@
 package br.com.restkotlinapi.controller
 
-import br.com.restkotlinapi.domain.Person
+import br.com.restkotlinapi.dto.v1.PersonDto
 import br.com.restkotlinapi.service.PersonService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/api/person/v1")
 class PersonController {
 
     @Autowired
@@ -17,7 +17,7 @@ class PersonController {
     @GetMapping(
         produces = [MediaType.APPLICATION_JSON_VALUE]
     )
-    fun findAll(): List<Person> {
+    fun findAll(): List<PersonDto> {
         return service.findAll()
     }
 
@@ -25,7 +25,7 @@ class PersonController {
         value = ["/{id}"],
         produces = [MediaType.APPLICATION_JSON_VALUE]
     )
-    fun findById(@PathVariable(value = "id") id: Long): Person {
+    fun findById(@PathVariable(value = "id") id: Long): PersonDto {
         return service.findById(id)
     }
 
@@ -33,7 +33,7 @@ class PersonController {
         produces = [MediaType.APPLICATION_JSON_VALUE],
         consumes = [MediaType.APPLICATION_JSON_VALUE]
     )
-    fun create(@RequestBody person: Person): Person {
+    fun create(@RequestBody person: PersonDto): PersonDto {
         return service.createPerson(person)
     }
 
@@ -41,7 +41,7 @@ class PersonController {
         produces = [MediaType.APPLICATION_JSON_VALUE],
         consumes = [MediaType.APPLICATION_JSON_VALUE]
     )
-    fun update(@RequestBody person: Person): Person {
+    fun update(@RequestBody person: PersonDto): PersonDto {
         return service.update(person)
     }
 
